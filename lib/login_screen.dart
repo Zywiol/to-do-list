@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/login_button.dart';
 import 'my_colors.dart';
 import 'package:gap/gap.dart';
@@ -26,7 +27,7 @@ class LoginScreen extends StatelessWidget {
                   'world of possibilities. Your journey begins now, so\n'
                   "let's get started!",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                       color: MyColors().bodyFont,
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
@@ -36,22 +37,23 @@ class LoginScreen extends StatelessWidget {
               const Gap(38),
               LoginButton(
                 buttonColor: MyColors().red,
-                buttonIconImage: Image.asset('assets/google.png'),
+                buttonIconImageUrl: 'assets/google.png',
                 buttonText: 'Continue with Google',
               ),
               const Gap(19),
               LoginButton(
-                buttonColor: MyColors().red,
-                buttonIconImage: Image.asset('assets/google.png'),
-                buttonText: 'Continue with Google',
+                buttonColor: MyColors().black,
+                buttonIconImageUrl: 'assets/apple.png',
+                buttonText: 'Continue with Apple',
+                buttonBorderWidth: 1.0,
               ),
               const Gap(19),
               LoginButton(
-                buttonColor: MyColors().red,
-                buttonIconImage: Image.asset('assets/google.png'),
-                buttonText: 'Continue with Google',
+                buttonColor: MyColors().primary,
+                buttonIconImageUrl: 'assets/profile.png',
+                buttonText: 'Continue as a Guest',
               ),
-              Gap(244.36)
+              const Gap(244.36)
             ],
           ),
         ),

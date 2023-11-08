@@ -1,15 +1,21 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:to_do_list/my_colors.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton(
       {super.key,
       required this.buttonColor,
-      required this.buttonIconImage,
-      required this.buttonText});
+      required this.buttonIconImageUrl,
+      required this.buttonText,
+      this.buttonBorderWidth = 0});
 
   final Color buttonColor;
   final String buttonText;
-  final Image buttonIconImage;
+  final String buttonIconImageUrl;
+  final double buttonBorderWidth;
 
   @override
   Widget build(context) {
@@ -19,21 +25,30 @@ class LoginButton extends StatelessWidget {
       child: FilledButton(
         onPressed: () {},
         style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(buttonColor)),
+            backgroundColor: MaterialStateProperty.all(
+              buttonColor,
+            ),
+            shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+                side: BorderSide(
+                    color: MyColors().white, width: buttonBorderWidth)))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/google.png',
+              buttonIconImageUrl,
               width: 24,
               height: 24,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 9),
               child: Text(
-                'Continue with Google',
-                style: TextStyle(
-                    fontSize: 14, fontWeight: FontWeight.w500, height: 1.5),
+                buttonText,
+                style: GoogleFonts.poppins(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  height: 1.5,
+                ),
               ),
             ),
           ],
