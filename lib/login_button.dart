@@ -1,8 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/my_colors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton(
@@ -25,23 +24,29 @@ class LoginButton extends StatelessWidget {
       child: FilledButton(
         onPressed: () {},
         style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(
-              buttonColor,
+          backgroundColor: MaterialStateProperty.all(
+            buttonColor,
+          ),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+              side: BorderSide(
+                color: MyColors().white,
+                width: buttonBorderWidth,
+              ),
             ),
-            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(24),
-                side: BorderSide(
-                    color: MyColors().white, width: buttonBorderWidth)))),
+          ),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
+            SvgPicture.asset(
               buttonIconImageUrl,
               width: 24,
               height: 24,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 9),
+              padding: const EdgeInsets.only(left: 9),
               child: Text(
                 buttonText,
                 style: GoogleFonts.poppins(
