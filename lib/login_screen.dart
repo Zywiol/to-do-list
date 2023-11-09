@@ -17,7 +17,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 172.78),
-                child: Image.asset('assets/logo.png'),
+                child: Image.asset('assets/logo.svg'),
               ),
               const Gap(24.88),
               Padding(
@@ -37,20 +37,20 @@ class LoginScreen extends StatelessWidget {
               const Gap(38),
               LoginButton(
                 buttonColor: MyColors().red,
-                buttonIconImageUrl: 'assets/google.png',
+                buttonIconImageUrl: 'assets/google.svg',
                 buttonText: 'Continue with Google',
               ),
               const Gap(19),
               LoginButton(
                 buttonColor: MyColors().black,
-                buttonIconImageUrl: 'assets/apple.png',
+                buttonIconImageUrl: 'assets/apple.svg',
                 buttonText: 'Continue with Apple',
                 buttonBorderWidth: 1.0,
               ),
               const Gap(19),
               LoginButton(
                 buttonColor: MyColors().primary,
-                buttonIconImageUrl: 'assets/profile.png',
+                buttonIconImageUrl: 'assets/profile.svg',
                 buttonText: 'Continue as a Guest',
               ),
               const Gap(244.36)

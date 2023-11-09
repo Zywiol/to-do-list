@@ -68,6 +68,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "flutter_localizations",
+      "rootUri": "file:///Users/dawidzywica/development/flutter/packages/flutter_localizations",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/dawidzywica/development/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -94,6 +100,12 @@
     {
       "name": "http_parser",
       "rootUri": "file:///Users/dawidzywica/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///Users/dawidzywica/.pub-cache/hosted/pub.dev/intl-0.18.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -254,7 +266,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-11-08T15:48:21.799934Z",
+  "generated": "2023-11-09T08:09:28.596700Z",
   "generator": "pub",
   "generatorVersion": "3.1.5"
 }
