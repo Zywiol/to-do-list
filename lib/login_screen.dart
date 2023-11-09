@@ -17,10 +17,8 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 172.78),
-                child: SvgPicture.asset('assets/logo.svg'),
-              ),
+              const Gap(172.78),
+              SvgPicture.asset('assets/logo.svg'),
               const Gap(24.88),
               Padding(
                 padding: const EdgeInsets.only(left: 24, right: 25),
