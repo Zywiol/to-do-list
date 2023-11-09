@@ -1,3 +1,5 @@
 .flutter-plugins
 .flutter-plugins-dependencies
 .DS_Store
+build
+.dart_tool
