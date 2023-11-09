@@ -1,7 +1,8 @@
 {
   "continueWithGoogle": "Continue with Google",
   "continueWithApple" : "Continue with Apple",
-  "continueAsAGuest":"Continue as a Guest"
+  "continueAsAGuest":"Continue as a Guest",
+  "welcomeMessage":"Please login in access your account and unlock a\nworld of possibilities. Your journey begins now, so\nlet's get started!"
 
 
 }

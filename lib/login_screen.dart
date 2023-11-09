@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/login_button.dart';
 import 'my_colors.dart';
 import 'package:gap/gap.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -17,15 +19,13 @@ class LoginScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 172.78),
-                child: Image.asset('assets/logo.svg'),
+                child: SvgPicture.asset('assets/logo.svg'),
               ),
               const Gap(24.88),
               Padding(
                 padding: const EdgeInsets.only(left: 24, right: 25),
                 child: Text(
-                  'Please login in access your account and unlock a\n'
-                  'world of possibilities. Your journey begins now, so\n'
-                  "let's get started!",
+                  AppLocalizations.of(context)!.welcomeMessage,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                       color: MyColors().bodyFont,
@@ -38,20 +38,20 @@ class LoginScreen extends StatelessWidget {
               LoginButton(
                 buttonColor: MyColors().red,
                 buttonIconImageUrl: 'assets/google.svg',
-                buttonText: 'Continue with Google',
+                buttonText: AppLocalizations.of(context)!.continueWithGoogle,
               ),
               const Gap(19),
               LoginButton(
                 buttonColor: MyColors().black,
                 buttonIconImageUrl: 'assets/apple.svg',
-                buttonText: 'Continue with Apple',
+                buttonText: AppLocalizations.of(context)!.continueWithApple,
                 buttonBorderWidth: 1.0,
               ),
               const Gap(19),
               LoginButton(
                 buttonColor: MyColors().primary,
                 buttonIconImageUrl: 'assets/profile.svg',
-                buttonText: 'Continue as a Guest',
+                buttonText: AppLocalizations.of(context)!.continueAsAGuest,
               ),
               const Gap(244.36)
             ],

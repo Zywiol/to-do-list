@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/my_colors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton(
@@ -39,7 +40,7 @@ class LoginButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
+            SvgPicture.asset(
               buttonIconImageUrl,
               width: 24,
               height: 24,
