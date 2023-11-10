@@ -3,8 +3,17 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/utils/my_colors.dart';
 import 'package:to_do_list/widgets/products_container.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ListCard extends StatelessWidget {
+  const ListCard({
+    super.key,
+    required this.numberOfProducts,
+    required this.myShopListCount,
+  });
+  final int numberOfProducts;
+  final int myShopListCount;
+
   @override
   Widget build(context) {
     return Column(
@@ -23,7 +32,7 @@ class ListCard extends StatelessWidget {
                 top: 17,
               ),
               child: Text(
-                'My Shop list 1',
+                AppLocalizations.of(context).myShopList + '$myShopListCount',
                 style: GoogleFonts.poppins(
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
@@ -39,26 +48,29 @@ class ListCard extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Container(
-                    width: 31,
-                    height: 31,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: MyColors().primary,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Text(
-                      '5',
-                      style: GoogleFonts.poppins(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          height: 1.5,
-                          color: MyColors().white),
-                    ),
-                  ),
-                  Gap(7),
+                  (numberOfProducts == 0)
+                      ? Container()
+                      : Container(
+                          width: 31,
+                          height: 31,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: MyColors().primary,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Text(
+                            '$numberOfProducts',
+                            style: GoogleFonts.poppins(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                height: 1.5,
+                                color: MyColors().white),
+                          ),
+                        ),
                   Text(
-                    'Products Items',
+                    (numberOfProducts == 0)
+                        ? AppLocalizations.of(context).noProductsItems
+                        : AppLocalizations.of(context).productsItems,
                     style: GoogleFonts.poppins(
                       color: MyColors().bodyFont,
                       fontSize: 13,

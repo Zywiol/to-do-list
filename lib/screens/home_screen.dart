@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/utils/my_colors.dart';
 import 'package:to_do_list/widgets/list_card.dart';
 import 'package:to_do_list/widgets/recomendation_card.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      'My List',
+                      AppLocalizations.of(context).myList,
                       style: GoogleFonts.poppins(
                         color: MyColors().dark,
                         fontSize: 28,
@@ -61,13 +62,31 @@ class HomeScreen extends StatelessWidget {
                   width: 325,
                   child: ListView(
                     padding: EdgeInsets.zero,
-                    children: [
-                      ListCard(),
-                      ListCard(),
-                      ListCard(),
-                      ListCard(),
-                      ListCard(),
-                      ListCard(),
+                    children: const [
+                      ListCard(
+                        numberOfProducts: 5,
+                        myShopListCount: 1,
+                      ),
+                      ListCard(
+                        numberOfProducts: 5,
+                        myShopListCount: 2,
+                      ),
+                      ListCard(
+                        numberOfProducts: 0,
+                        myShopListCount: 3,
+                      ),
+                      ListCard(
+                        numberOfProducts: 5,
+                        myShopListCount: 4,
+                      ),
+                      ListCard(
+                        numberOfProducts: 5,
+                        myShopListCount: 5,
+                      ),
+                      ListCard(
+                        numberOfProducts: 5,
+                        myShopListCount: 6,
+                      ),
                     ],
                   ),
                 ),
@@ -81,7 +100,7 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      'Recommendation',
+                      AppLocalizations.of(context).recommendation,
                       style: GoogleFonts.poppins(
                         color: MyColors().black,
                         fontSize: 20,
@@ -91,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Gap(98),
                     Text(
-                      'View All',
+                      AppLocalizations.of(context).viewAll,
                       style: GoogleFonts.poppins(
                         color: MyColors().bodyFont,
                         fontSize: 13,
@@ -154,7 +173,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         Gap(21),
                         Text(
-                          'Add list',
+                          AppLocalizations.of(context).addList,
                           style: GoogleFonts.poppins(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,

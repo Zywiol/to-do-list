@@ -116,6 +116,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please login in access your account and unlock a\nworld of possibilities. Your journey begins now, so\nlet\'s get started!'**
   String get welcomeMessage;
+
+  /// No description provided for @myList.
+  ///
+  /// In en, this message translates to:
+  /// **'My List'**
+  String get myList;
+
+  /// No description provided for @productsItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Products Items'**
+  String get productsItems;
+
+  /// No description provided for @noProductsItems.
+  ///
+  /// In en, this message translates to:
+  /// **'No Products Items'**
+  String get noProductsItems;
+
+  /// No description provided for @myShopList.
+  ///
+  /// In en, this message translates to:
+  /// **'My Shop list '**
+  String get myShopList;
+
+  /// No description provided for @recommendation.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommendation'**
+  String get recommendation;
+
+  /// No description provided for @viewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get viewAll;
+
+  /// No description provided for @addList.
+  ///
+  /// In en, this message translates to:
+  /// **'Add list'**
+  String get addList;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
