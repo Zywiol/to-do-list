@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/utils/my_colors.dart';
+import 'package:to_do_list/widgets/list_card.dart';
+import 'package:to_do_list/widgets/recomendation_card.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,16 +21,21 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 25, top: 55, right: 20),
+                padding: const EdgeInsets.only(
+                  left: 25,
+                  top: 55,
+                  right: 20,
+                ),
                 child: Row(
                   children: [
                     Text(
                       'My List',
                       style: GoogleFonts.poppins(
-                          color: MyColors().dark,
-                          fontSize: 28,
-                          fontWeight: FontWeight.w700,
-                          height: 1.5),
+                        color: MyColors().dark,
+                        fontSize: 28,
+                        fontWeight: FontWeight.w700,
+                        height: 1.5,
+                      ),
                     ),
                     Gap(192),
                     Image.asset(
@@ -48,6 +55,15 @@ class HomeScreen extends StatelessWidget {
                 child: Container(
                   color: MyColors().black,
                   height: 369,
+                  width: 325,
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    children: [
+                      ListCard(),
+                      ListCard(),
+                      ListCard(),
+                    ],
+                  ),
                 ),
               ),
               Padding(
@@ -61,19 +77,21 @@ class HomeScreen extends StatelessWidget {
                     Text(
                       'Recommendation',
                       style: GoogleFonts.poppins(
-                          color: MyColors().black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                          height: 1.5),
+                        color: MyColors().black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                        height: 1.5,
+                      ),
                     ),
                     Gap(98),
                     Text(
                       'View All',
                       style: GoogleFonts.poppins(
-                          color: MyColors().bodyFont,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w400,
-                          height: 1.5),
+                        color: MyColors().bodyFont,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400,
+                        height: 1.5,
+                      ),
                     ),
                   ],
                 ),
@@ -89,18 +107,34 @@ class HomeScreen extends StatelessWidget {
                       color: MyColors().black,
                       width: 350,
                       height: 159,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          RecomendationCard(),
+                          RecomendationCard(),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                    left: 104, top: 14, right: 102, bottom: 33),
+                  left: 104,
+                  top: 14,
+                  right: 102,
+                  bottom: 33,
+                ),
                 child: SizedBox(
                   width: 169,
                   height: 58,
                   child: FilledButton(
                     onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        MyColors().primary,
+                      ),
+                    ),
                     child: Row(
                       children: [
                         Icon(
@@ -111,15 +145,13 @@ class HomeScreen extends StatelessWidget {
                         Text(
                           'Add list',
                           style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            height: 1.5,
+                          ),
                         ),
                       ],
                     ),
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(MyColors().primary)),
                   ),
                 ),
               )
