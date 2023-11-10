@@ -22,7 +22,9 @@ class ListCard extends StatelessWidget {
           width: 325,
           height: 115,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(
+              10,
+            ),
             color: MyColors().white,
           ),
           child: Stack(children: [
@@ -61,10 +63,11 @@ class ListCard extends StatelessWidget {
                           child: Text(
                             '$numberOfProducts',
                             style: GoogleFonts.poppins(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                height: 1.5,
-                                color: MyColors().white),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              height: 1.5,
+                              color: MyColors().white,
+                            ),
                           ),
                         ),
                   Text(

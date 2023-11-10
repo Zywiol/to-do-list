@@ -137,11 +137,14 @@ class HomeScreen extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         children: const [
                           RecomendationCard(
-                              imageLink: 'assets/recommendation/pills.svg'),
+                            imageLink: 'assets/recommendation/pills.svg',
+                          ),
                           RecomendationCard(
-                              imageLink: 'assets/recommendation/travel.svg'),
+                            imageLink: 'assets/recommendation/travel.svg',
+                          ),
                           RecomendationCard(
-                              imageLink: 'assets/recommendation/party.svg'),
+                            imageLink: 'assets/recommendation/party.svg',
+                          ),
                         ],
                       ),
                     ),

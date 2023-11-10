@@ -9,7 +9,9 @@ class ProductsContainer extends StatelessWidget {
       height: 95,
       child: Stack(
         children: [
-          SvgPicture.asset('assets/products/Frame.svg'),
+          SvgPicture.asset(
+            'assets/products/Frame.svg',
+          ),
         ],
       ),
     );
