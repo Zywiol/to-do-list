@@ -46,7 +46,9 @@ class LoginButton extends StatelessWidget {
               height: 24,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 9),
+              padding: const EdgeInsets.only(
+                left: 9,
+              ),
               child: Text(
                 buttonText,
                 style: GoogleFonts.poppins(

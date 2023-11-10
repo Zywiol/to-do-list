@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/utils/my_colors.dart';
 import 'package:to_do_list/widgets/list_card.dart';
 import 'package:to_do_list/widgets/recomendation_card.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,10 +37,16 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     Gap(192),
-                    Image.asset(
-                      'assets/photo.png',
-                      width: 40,
-                      height: 40,
+                    Container(
+                      decoration: const BoxDecoration(
+                        color: Color.fromRGBO(239, 231, 255, 1),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Image.asset(
+                        'assets/photo.png',
+                        width: 40,
+                        height: 40,
+                      ),
                     ),
                   ],
                 ),
@@ -49,16 +54,17 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(
                   top: 14,
-                  left: 25,
                   right: 25,
                 ),
                 child: Container(
-                  color: MyColors().black,
                   height: 369,
                   width: 325,
                   child: ListView(
                     padding: EdgeInsets.zero,
                     children: [
+                      ListCard(),
+                      ListCard(),
+                      ListCard(),
                       ListCard(),
                       ListCard(),
                       ListCard(),
@@ -97,21 +103,26 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 11.0,
                       left: 28,
                     ),
-                    child: Container(
-                      color: MyColors().black,
+                    child: SizedBox(
                       width: 350,
                       height: 159,
                       child: ListView(
+                        padding: EdgeInsets.zero,
                         scrollDirection: Axis.horizontal,
-                        children: [
-                          RecomendationCard(),
-                          RecomendationCard(),
+                        children: const [
+                          RecomendationCard(
+                              imageLink: 'assets/recommendation/pills.svg'),
+                          RecomendationCard(
+                              imageLink: 'assets/recommendation/travel.svg'),
+                          RecomendationCard(
+                              imageLink: 'assets/recommendation/party.svg'),
                         ],
                       ),
                     ),
@@ -137,7 +148,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.add_circle,
                           size: 30,
                         ),
