@@ -20,10 +20,10 @@ class HomeScreen extends StatelessWidget {
           ),
           child: Column(
             children: [
+              const Gap(55),
               Padding(
                 padding: const EdgeInsets.only(
                   left: 25,
-                  top: 55,
                   right: 20,
                 ),
                 child: Row(
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                         height: 1.5,
                       ),
                     ),
-                    Gap(192),
+                    const Gap(192),
                     Container(
                       decoration: const BoxDecoration(
                         color: Color.fromRGBO(239, 231, 255, 1),
@@ -52,9 +52,9 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const Gap(14),
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 14,
                   right: 25,
                 ),
                 child: Container(
@@ -65,35 +65,35 @@ class HomeScreen extends StatelessWidget {
                     children: const [
                       ListCard(
                         numberOfProducts: 5,
-                        myShopListCount: 1,
+                        count: 1,
                       ),
                       ListCard(
                         numberOfProducts: 5,
-                        myShopListCount: 2,
+                        count: 2,
                       ),
                       ListCard(
                         numberOfProducts: 0,
-                        myShopListCount: 3,
+                        count: 3,
                       ),
                       ListCard(
                         numberOfProducts: 5,
-                        myShopListCount: 4,
+                        count: 4,
                       ),
                       ListCard(
                         numberOfProducts: 5,
-                        myShopListCount: 5,
+                        count: 5,
                       ),
                       ListCard(
                         numberOfProducts: 5,
-                        myShopListCount: 6,
+                        count: 6,
                       ),
                     ],
                   ),
                 ),
               ),
+              const Gap(27),
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 27,
                   left: 25,
                   right: 16,
                 ),
@@ -108,7 +108,7 @@ class HomeScreen extends StatelessWidget {
                         height: 1.5,
                       ),
                     ),
-                    Gap(98),
+                    const Gap(98),
                     Text(
                       AppLocalizations.of(context).viewAll,
                       style: GoogleFonts.poppins(
@@ -124,9 +124,9 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  const Gap(11),
                   Padding(
                     padding: const EdgeInsets.only(
-                      top: 11.0,
                       left: 28,
                     ),
                     child: SizedBox(
@@ -136,27 +136,20 @@ class HomeScreen extends StatelessWidget {
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.horizontal,
                         children: const [
-                          RecomendationCard(
-                            imageLink: 'assets/recommendation/pills.svg',
-                          ),
-                          RecomendationCard(
-                            imageLink: 'assets/recommendation/travel.svg',
-                          ),
-                          RecomendationCard(
-                            imageLink: 'assets/recommendation/party.svg',
-                          ),
+                          RecomendationCard(imageLink: 'assets/pills.svg'),
+                          RecomendationCard(imageLink: 'assets/travel.svg'),
+                          RecomendationCard(imageLink: 'assets/party.svg'),
                         ],
                       ),
                     ),
                   ),
                 ],
               ),
+              const Gap(14),
               Padding(
                 padding: const EdgeInsets.only(
                   left: 104,
-                  top: 14,
                   right: 102,
-                  bottom: 33,
                 ),
                 child: SizedBox(
                   width: 169,
@@ -174,7 +167,7 @@ class HomeScreen extends StatelessWidget {
                           Icons.add_circle,
                           size: 30,
                         ),
-                        Gap(21),
+                        const Gap(21),
                         Text(
                           AppLocalizations.of(context).addList,
                           style: GoogleFonts.poppins(

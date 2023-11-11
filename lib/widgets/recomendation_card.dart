@@ -59,7 +59,7 @@ class RecomendationCard extends StatelessWidget {
             ],
           ),
         ),
-        Gap(13)
+        const Gap(13)
       ],
     );
   }

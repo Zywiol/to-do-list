@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/utils/my_colors.dart';
-import 'package:to_do_list/widgets/products_container.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard({
     super.key,
     required this.numberOfProducts,
-    required this.myShopListCount,
+    required this.count,
   });
   final int numberOfProducts;
-  final int myShopListCount;
+  final int count;
 
   @override
   Widget build(context) {
@@ -22,9 +22,7 @@ class ListCard extends StatelessWidget {
           width: 325,
           height: 115,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(
-              10,
-            ),
+            borderRadius: BorderRadius.circular(10),
             color: MyColors().white,
           ),
           child: Stack(children: [
@@ -34,7 +32,7 @@ class ListCard extends StatelessWidget {
                 top: 17,
               ),
               child: Text(
-                AppLocalizations.of(context).myShopList + '$myShopListCount',
+                AppLocalizations.of(context).myShopList + '$count',
                 style: GoogleFonts.poppins(
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
@@ -85,14 +83,23 @@ class ListCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                left: 205,
-                top: 12,
-                bottom: 8,
-                right: 8,
-              ),
-              child: ProductsContainer(),
-            )
+                padding: const EdgeInsets.only(
+                  left: 205,
+                  top: 12,
+                  bottom: 8,
+                  right: 8,
+                ),
+                child: Container(
+                  width: 112,
+                  height: 95,
+                  child: Stack(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/Frame.svg',
+                      ),
+                    ],
+                  ),
+                ))
           ]),
         ),
         Gap(12)

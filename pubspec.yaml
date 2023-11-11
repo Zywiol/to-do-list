@@ -39,7 +39,5 @@ flutter:
 
   assets:
     - assets/
-    - assets/products/
-    - assets/recommendation/
 
   
