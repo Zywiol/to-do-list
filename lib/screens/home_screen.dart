@@ -5,6 +5,7 @@ import 'package:to_do_list/utils/my_colors.dart';
 import 'package:to_do_list/widgets/list_card.dart';
 import 'package:to_do_list/widgets/recomendation_card.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:to_do_list/utils/app_images2.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -44,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(
-                        'assets/photo.png',
+                        AppImages.profilePhoto,
                         width: 40,
                         height: 40,
                       ),
@@ -57,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   right: 25,
                 ),
-                child: Container(
+                child: SizedBox(
                   height: 369,
                   width: 325,
                   child: ListView(
@@ -135,10 +136,10 @@ class HomeScreen extends StatelessWidget {
                       child: ListView(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.horizontal,
-                        children: const [
-                          RecomendationCard(imageLink: 'assets/pills.svg'),
-                          RecomendationCard(imageLink: 'assets/travel.svg'),
-                          RecomendationCard(imageLink: 'assets/party.svg'),
+                        children: [
+                          RecomendationCard(imageLink: AppImages.pillsIcon),
+                          RecomendationCard(imageLink: AppImages.travelIcon),
+                          RecomendationCard(imageLink: AppImages.partyIcon),
                         ],
                       ),
                     ),

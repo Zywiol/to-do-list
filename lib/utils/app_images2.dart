@@ -1,5 +1,3 @@
-//Do tej klasy nie mam dostępu, nie mogę zrobić importu dlaczego?
-
 abstract class AppImages {
   static String appleLogo = 'assets/apple.svg';
   static String productsFrame = 'assets/Frame.svg';
