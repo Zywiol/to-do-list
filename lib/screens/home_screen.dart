@@ -23,10 +23,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               const Gap(55),
               Padding(
-                padding: const EdgeInsets.only(
-                  left: 25,
-                  right: 20,
-                ),
+                padding: const EdgeInsets.only(left: 25, right: 20),
                 child: Row(
                   children: [
                     Text(
@@ -44,20 +41,15 @@ class HomeScreen extends StatelessWidget {
                         color: Color.fromRGBO(239, 231, 255, 1),
                         shape: BoxShape.circle,
                       ),
-                      child: Image.asset(
-                        AppImages.profilePhoto,
-                        width: 40,
-                        height: 40,
-                      ),
+                      child: Image.asset(AppImages.profilePhoto,
+                          width: 40, height: 40),
                     ),
                   ],
                 ),
               ),
               const Gap(14),
               Padding(
-                padding: const EdgeInsets.only(
-                  right: 25,
-                ),
+                padding: const EdgeInsets.only(right: 25),
                 child: SizedBox(
                   height: 369,
                   width: 325,
