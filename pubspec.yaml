@@ -39,5 +39,6 @@ flutter:
 
   assets:
     - assets/
+    - assets/app_images.dart
 
   
