@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:to_do_list/screens/home_screen.dart';
 import 'package:to_do_list/utils/my_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -22,7 +23,14 @@ class LoginButton extends StatelessWidget {
       width: 301,
       height: 54.32243,
       child: FilledButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HomeScreen(),
+            ),
+          );
+        },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(
             buttonColor,

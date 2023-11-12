@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/utils/my_colors.dart';
 import 'package:to_do_list/widgets/list_card.dart';
 import 'package:to_do_list/widgets/recomendation_card.dart';
@@ -17,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         alignment: Alignment.center,
         child: Container(
           decoration: BoxDecoration(
-            color: MyColors().backgroundLight,
+            color: Theme.of(context).colorScheme.background,
           ),
           child: Column(
             children: [
@@ -26,15 +25,8 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 25, right: 20),
                 child: Row(
                   children: [
-                    Text(
-                      AppLocalizations.of(context).myList,
-                      style: GoogleFonts.poppins(
-                        color: MyColors().dark,
-                        fontSize: 28,
-                        fontWeight: FontWeight.w700,
-                        height: 1.5,
-                      ),
-                    ),
+                    Text(AppLocalizations.of(context).myList,
+                        style: Theme.of(context).textTheme.headlineLarge),
                     const Gap(192),
                     Container(
                       decoration: const BoxDecoration(
@@ -94,22 +86,12 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Text(
                       AppLocalizations.of(context).recommendation,
-                      style: GoogleFonts.poppins(
-                        color: MyColors().black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        height: 1.5,
-                      ),
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const Gap(98),
                     Text(
                       AppLocalizations.of(context).viewAll,
-                      style: GoogleFonts.poppins(
-                        color: MyColors().bodyFont,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
-                        height: 1.5,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],
                 ),
@@ -156,18 +138,15 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        const Icon(
+                        Icon(
+                          color: Theme.of(context).iconTheme.color,
                           Icons.add_circle,
                           size: 30,
                         ),
                         const Gap(21),
                         Text(
                           AppLocalizations.of(context).addList,
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            height: 1.5,
-                          ),
+                          style: Theme.of(context).textTheme.labelMedium,
                         ),
                       ],
                     ),

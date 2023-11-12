@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/widgets/login_button.dart';
 import '../utils/my_colors.dart';
 import 'package:gap/gap.dart';
@@ -10,14 +9,16 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Align(
         alignment: Alignment.center,
         child: Container(
           decoration: BoxDecoration(
-            color: MyColors().backgroundLight,
+            color: Theme.of(context).colorScheme.background,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
             children: [
               const Gap(172.78),
               SvgPicture.asset('assets/logo.svg'),
@@ -30,12 +31,7 @@ class LoginScreen extends StatelessWidget {
                 child: Text(
                   AppLocalizations.of(context).welcomeMessage,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                    color: MyColors().bodyFont,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                    height: 1.5,
-                  ),
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
               const Gap(38),

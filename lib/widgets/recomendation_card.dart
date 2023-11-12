@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/utils/my_colors.dart';
 
 class RecomendationCard extends StatelessWidget {
@@ -16,7 +15,7 @@ class RecomendationCard extends StatelessWidget {
           width: 145,
           height: 144,
           decoration: BoxDecoration(
-            color: MyColors().white,
+            color: Theme.of(context).colorScheme.primary,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Stack(
@@ -47,14 +46,8 @@ class RecomendationCard extends StatelessWidget {
                   left: 12,
                   bottom: 20,
                 ),
-                child: Text(
-                  'Lorem ipsum',
-                  style: GoogleFonts.poppins(
-                      color: MyColors().dark,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      height: 1.5),
-                ),
+                child: Text('Lorem ipsum',
+                    style: Theme.of(context).textTheme.titleSmall),
               )
             ],
           ),
