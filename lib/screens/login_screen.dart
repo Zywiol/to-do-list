@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list/widgets/login_button.dart';
-import '../utils/my_colors.dart';
+import '../extensions/theme_colors_ext.dart';
 import 'package:gap/gap.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(context) {
+    final customColors = Theme.of(context).extension<CustomColors>()!;
+    final string = AppLocalizations.of(context);
+    final themesData = Theme.of(context);
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: themesData.colorScheme.background,
       body: Align(
         alignment: Alignment.center,
         child: Container(
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.background,
+            color: themesData.colorScheme.background,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -29,29 +34,29 @@ class LoginScreen extends StatelessWidget {
                   right: 25,
                 ),
                 child: Text(
-                  AppLocalizations.of(context).welcomeMessage,
+                  string.welcomeMessage,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodySmall,
+                  style: themesData.textTheme.bodySmall,
                 ),
               ),
               const Gap(38),
               LoginButton(
-                buttonColor: MyColors().red,
+                buttonColor: customColors.googleButton,
                 buttonIconImageUrl: 'assets/google.svg',
-                buttonText: AppLocalizations.of(context).continueWithGoogle,
+                buttonText: string.continueWithGoogle,
               ),
               const Gap(19),
               LoginButton(
-                buttonColor: MyColors().black,
+                buttonColor: customColors.appleButton,
                 buttonIconImageUrl: 'assets/apple.svg',
-                buttonText: AppLocalizations.of(context).continueWithApple,
+                buttonText: string.continueWithApple,
                 buttonBorderWidth: 1.0,
               ),
               const Gap(19),
               LoginButton(
-                buttonColor: MyColors().primary,
+                buttonColor: customColors.guestButton,
                 buttonIconImageUrl: 'assets/profile.svg',
-                buttonText: AppLocalizations.of(context).continueAsAGuest,
+                buttonText: string.continueAsAGuest,
               ),
               const Gap(244.36)
             ],

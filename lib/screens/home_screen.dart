@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:to_do_list/utils/my_colors.dart';
+import 'package:to_do_list/extensions/theme_colors_ext.dart';
 import 'package:to_do_list/widgets/list_card.dart';
 import 'package:to_do_list/widgets/recomendation_card.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -11,12 +11,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
+    final customColors = Theme.of(context).extension<CustomColors>()!;
+    final string = AppLocalizations.of(context);
+    final themesData = Theme.of(context);
     return Scaffold(
       body: Align(
         alignment: Alignment.center,
         child: Container(
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.background,
+            color: themesData.colorScheme.background,
           ),
           child: Column(
             children: [
@@ -25,12 +28,12 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 25, right: 20),
                 child: Row(
                   children: [
-                    Text(AppLocalizations.of(context).myList,
-                        style: Theme.of(context).textTheme.headlineLarge),
+                    Text(string.myList,
+                        style: themesData.textTheme.headlineLarge),
                     const Gap(192),
                     Container(
-                      decoration: const BoxDecoration(
-                        color: Color.fromRGBO(239, 231, 255, 1),
+                      decoration: BoxDecoration(
+                        color: customColors.profileBackground,
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(AppImages.profilePhoto,
@@ -85,13 +88,13 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      AppLocalizations.of(context).recommendation,
-                      style: Theme.of(context).textTheme.titleLarge,
+                      string.recommendation,
+                      style: themesData.textTheme.titleLarge,
                     ),
                     const Gap(98),
                     Text(
-                      AppLocalizations.of(context).viewAll,
-                      style: Theme.of(context).textTheme.bodySmall,
+                      string.viewAll,
+                      style: themesData.textTheme.bodySmall,
                     ),
                   ],
                 ),
@@ -133,7 +136,7 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {},
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                        MyColors().primary,
+                        themesData.colorScheme.secondary,
                       ),
                     ),
                     child: Row(
@@ -145,8 +148,8 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const Gap(21),
                         Text(
-                          AppLocalizations.of(context).addList,
-                          style: Theme.of(context).textTheme.labelMedium,
+                          string.addList,
+                          style: themesData.textTheme.labelMedium,
                         ),
                       ],
                     ),

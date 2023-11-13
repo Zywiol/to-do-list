@@ -28,6 +28,11 @@ ThemeData lightTheme = ThemeData(
       height: 1.5,
     ),
     titleSmall: GoogleFonts.poppins(
+        color: const Color.fromRGBO(255, 255, 255, 1),
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        height: 1.5),
+    titleMedium: GoogleFonts.poppins(
         color: const Color.fromRGBO(0, 0, 0, 1),
         fontSize: 14,
         fontWeight: FontWeight.w500,

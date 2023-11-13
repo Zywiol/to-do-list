@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_list/assets/app_images.dart';
-import 'package:to_do_list/utils/my_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -17,6 +15,8 @@ class ListCard extends StatelessWidget {
 
   @override
   Widget build(context) {
+    final string = AppLocalizations.of(context);
+    final themesData = Theme.of(context);
     return Column(
       children: [
         Container(
@@ -24,7 +24,7 @@ class ListCard extends StatelessWidget {
           height: 115,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Theme.of(context).colorScheme.primary,
+            color: themesData.colorScheme.primary,
           ),
           child: Stack(children: [
             Padding(
@@ -33,8 +33,8 @@ class ListCard extends StatelessWidget {
                 top: 17,
               ),
               child: Text(
-                AppLocalizations.of(context).myShopList + '$count',
-                style: Theme.of(context).textTheme.titleLarge,
+                string.myShopList + '$count',
+                style: themesData.textTheme.titleLarge,
               ),
             ),
             Padding(
@@ -52,24 +52,19 @@ class ListCard extends StatelessWidget {
                           height: 31,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: MyColors().primary,
+                            color: themesData.colorScheme.secondary,
                             shape: BoxShape.circle,
                           ),
                           child: Text(
                             '$numberOfProducts',
-                            style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5,
-                              color: MyColors().white,
-                            ),
+                            style: themesData.textTheme.titleSmall,
                           ),
                         ),
                   Text(
                       (numberOfProducts == 0)
-                          ? AppLocalizations.of(context).noProductsItems
-                          : AppLocalizations.of(context).productsItems,
-                      style: Theme.of(context).textTheme.bodySmall),
+                          ? string.noProductsItems
+                          : string.productsItems,
+                      style: themesData.textTheme.bodySmall),
                 ],
               ),
             ),

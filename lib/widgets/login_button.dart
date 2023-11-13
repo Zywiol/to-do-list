@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:to_do_list/extensions/theme_text_ext.dart';
 import 'package:to_do_list/screens/home_screen.dart';
-import 'package:to_do_list/utils/my_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../extensions/theme_colors_ext.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton(
@@ -12,13 +12,16 @@ class LoginButton extends StatelessWidget {
       required this.buttonText,
       this.buttonBorderWidth = 0});
 
-  final Color buttonColor;
+  final Color? buttonColor;
   final String buttonText;
   final String buttonIconImageUrl;
   final double buttonBorderWidth;
 
   @override
   Widget build(context) {
+    final customeTextStyle = Theme.of(context).extension<CustomTextStyle>()!;
+    final customColors = Theme.of(context).extension<CustomColors>();
+
     return SizedBox(
       width: 301,
       height: 54.32243,
@@ -39,7 +42,7 @@ class LoginButton extends StatelessWidget {
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
-                color: MyColors().white,
+                color: customColors!.buttonBorder,
                 width: buttonBorderWidth,
               ),
             ),
@@ -57,14 +60,7 @@ class LoginButton extends StatelessWidget {
               padding: const EdgeInsets.only(
                 left: 9,
               ),
-              child: Text(
-                buttonText,
-                style: GoogleFonts.poppins(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  height: 1.5,
-                ),
-              ),
+              child: Text(buttonText, style: customeTextStyle.textStyle),
             ),
           ],
         ),
