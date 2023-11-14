@@ -99,17 +99,47 @@ class _TextAndProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(string.myList, style: themesData.textTheme.headlineLarge),
+        _HeaderText(string: string, themesData: themesData),
         const Gap(192),
-        Container(
-          decoration: BoxDecoration(
-            color: customColors.profileBackground,
-            shape: BoxShape.circle,
-          ),
-          child: Image.asset(AppImages.profilePhoto, width: 40, height: 40),
-        ),
+        _ProfileContainer(customColors: customColors),
       ],
     );
+  }
+}
+
+class _ProfileContainer extends StatelessWidget {
+  const _ProfileContainer({
+    super.key,
+    required this.customColors,
+  });
+
+  final CustomColors customColors;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: customColors.profileBackground,
+        shape: BoxShape.circle,
+      ),
+      child: Image.asset(AppImages.profilePhoto, width: 40, height: 40),
+    );
+  }
+}
+
+class _HeaderText extends StatelessWidget {
+  const _HeaderText({
+    super.key,
+    required this.string,
+    required this.themesData,
+  });
+
+  final AppLocalizations string;
+  final ThemeData themesData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(string.myList, style: themesData.textTheme.headlineLarge);
   }
 }
 
