@@ -33,10 +33,9 @@ class LoginScreen extends StatelessWidget {
                   left: 24,
                   right: 25,
                 ),
-                child: Text(
-                  string.welcomeMessage,
-                  textAlign: TextAlign.center,
-                  style: themesData.textTheme.bodySmall,
+                child: _WelcomeText(
+                  string: string,
+                  themesData: themesData,
                 ),
               ),
               const Gap(38),
@@ -63,6 +62,26 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _WelcomeText extends StatelessWidget {
+  const _WelcomeText({
+    super.key,
+    required this.string,
+    required this.themesData,
+  });
+
+  final AppLocalizations string;
+  final ThemeData themesData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      string.welcomeMessage,
+      textAlign: TextAlign.center,
+      style: themesData.textTheme.bodySmall,
     );
   }
 }
