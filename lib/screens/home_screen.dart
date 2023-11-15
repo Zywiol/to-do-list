@@ -12,8 +12,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
-    final customColors = context.themeData.extension<CustomColors>()!;
-
     return Scaffold(
       body: Align(
         alignment: Alignment.center,
@@ -27,7 +25,7 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25, right: 20),
                 child: _TextAndProfile(
-                  customColors: customColors,
+                  customColor: context.customColor,
                 ),
               ),
               const Gap(14),
@@ -84,10 +82,10 @@ class HomeScreen extends StatelessWidget {
 class _TextAndProfile extends StatelessWidget {
   const _TextAndProfile({
     super.key,
-    required this.customColors,
+    required this.customColor,
   });
 
-  final CustomColors customColors;
+  final CustomColors customColor;
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +96,7 @@ class _TextAndProfile extends StatelessWidget {
           style: context.themeData.textTheme.headlineLarge,
         ),
         const Gap(192),
-        _ProfileContainer(customColors: customColors),
+        _ProfileContainer(customColor: customColor),
       ],
     );
   }
@@ -107,16 +105,16 @@ class _TextAndProfile extends StatelessWidget {
 class _ProfileContainer extends StatelessWidget {
   const _ProfileContainer({
     super.key,
-    required this.customColors,
+    required this.customColor,
   });
 
-  final CustomColors customColors;
+  final CustomColors customColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: customColors.profileBackground,
+        color: context.customColor.profileBackground,
         shape: BoxShape.circle,
       ),
       child: Image.asset(AppImages.profilePhoto, width: 40, height: 40),

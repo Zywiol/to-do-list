@@ -1,7 +1,7 @@
 {
   "continueWithGoogle": "Kontynuuj z Google",
   "continueWithApple" : "Kontynuuj z Apple",
-  "continueAsAGuest":"Kontynuuj jako Gość",
+  "continueAsGuest":"Kontynuuj jako Gość",
   "welcomeMessage": "Proszę zaloguj się, aby uzyskać dostęp do swojego konta i odblokować świat możliwości. \nTwoja podróż rozpoczyna się teraz, więc zaczynajmy!",
   "myList":"Moja Lista ",
   "productsItems":"Liczba produktów",

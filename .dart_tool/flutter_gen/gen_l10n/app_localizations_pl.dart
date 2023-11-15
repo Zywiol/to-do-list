@@ -11,7 +11,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get continueWithApple => 'Kontynuuj z Apple';
 
   @override
-  String get continueAsAGuest => 'Kontynuuj jako Gość';
+  String get continueAsGuest => 'Kontynuuj jako Gość';
 
   @override
   String get welcomeMessage => 'Proszę zaloguj się, aby uzyskać dostęp do swojego konta i odblokować świat możliwości. \nTwoja podróż rozpoczyna się teraz, więc zaczynajmy!';

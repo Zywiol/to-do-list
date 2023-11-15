@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list/extensions/context_ext.dart';
 import 'package:to_do_list/widgets/login_button.dart';
-import '../extensions/theme_colors_ext.dart';
 import 'package:gap/gap.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -9,12 +8,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
-
-
   @override
   Widget build(context) {
-    final customColors = context.themeData.extension<CustomColors>()!;
-
     return Scaffold(
       backgroundColor: context.themeData.colorScheme.background,
       body: Align(
@@ -42,22 +37,22 @@ class LoginScreen extends StatelessWidget {
               ),
               const Gap(38),
               LoginButton(
-                buttonColor: customColors.red,
+                buttonColor: context.customColor.red,
                 buttonIconImageUrl: 'assets/google.svg',
                 buttonText: context.strings.continueWithGoogle,
               ),
               const Gap(19),
               LoginButton(
-                buttonColor: customColors.black,
+                buttonColor: context.customColor.black,
                 buttonIconImageUrl: 'assets/apple.svg',
                 buttonText: context.strings.continueWithApple,
                 buttonBorderWidth: 1.0,
               ),
               const Gap(19),
               LoginButton(
-                buttonColor: customColors.primary,
+                buttonColor: context.customColor.primary,
                 buttonIconImageUrl: 'assets/profile.svg',
-                buttonText: context.strings.continueAsAGuest,
+                buttonText: context.strings.continueAsGuest,
               ),
               const Gap(244.36)
             ],

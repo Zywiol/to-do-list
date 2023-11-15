@@ -105,11 +105,11 @@ abstract class AppLocalizations {
   /// **'Continue with Apple'**
   String get continueWithApple;
 
-  /// No description provided for @continueAsAGuest.
+  /// No description provided for @continueAsGuest.
   ///
   /// In en, this message translates to:
   /// **'Continue as a Guest'**
-  String get continueAsAGuest;
+  String get continueAsGuest;
 
   /// No description provided for @welcomeMessage.
   ///

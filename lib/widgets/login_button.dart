@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list/extensions/context_ext.dart';
-
 import 'package:to_do_list/screens/home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../extensions/theme_colors_ext.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton(
@@ -20,8 +18,6 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(context) {
-    final customColors = context.themeData.extension<CustomColors>()!;
-
     return SizedBox(
       width: 301,
       height: 54.32243,
@@ -42,7 +38,7 @@ class LoginButton extends StatelessWidget {
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
-                color: customColors.white,
+                color: context.customColor.white,
                 width: buttonBorderWidth,
               ),
             ),

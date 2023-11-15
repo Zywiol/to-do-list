@@ -11,7 +11,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get continueWithApple => 'Continue with Apple';
 
   @override
-  String get continueAsAGuest => 'Continue as a Guest';
+  String get continueAsGuest => 'Continue as a Guest';
 
   @override
   String get welcomeMessage => 'Please login in access your account and unlock a\nworld of possibilities. Your journey begins now, so\nlet\'s get started!';
