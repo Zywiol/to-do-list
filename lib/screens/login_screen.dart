@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/extensions/context_ext.dart';
 import 'package:to_do_list/widgets/login_button.dart';
 import '../extensions/theme_colors_ext.dart';
 import 'package:gap/gap.dart';
@@ -8,18 +9,19 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
+
+
   @override
   Widget build(context) {
-    final customColors = Theme.of(context).extension<CustomColors>()!;
-    final string = AppLocalizations.of(context);
-    final themesData = Theme.of(context);
+    final customColors = context.themeData.extension<CustomColors>()!;
+
     return Scaffold(
-      backgroundColor: themesData.colorScheme.background,
+      backgroundColor: context.themeData.colorScheme.background,
       body: Align(
         alignment: Alignment.center,
         child: Container(
           decoration: BoxDecoration(
-            color: themesData.colorScheme.background,
+            color: context.themeData.colorScheme.background,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -34,28 +36,28 @@ class LoginScreen extends StatelessWidget {
                   right: 25,
                 ),
                 child: _WelcomeText(
-                  string: string,
-                  themesData: themesData,
+                  string: context.strings,
+                  themeData: context.themeData,
                 ),
               ),
               const Gap(38),
               LoginButton(
-                buttonColor: customColors.googleButton,
+                buttonColor: customColors.red,
                 buttonIconImageUrl: 'assets/google.svg',
-                buttonText: string.continueWithGoogle,
+                buttonText: context.strings.continueWithGoogle,
               ),
               const Gap(19),
               LoginButton(
-                buttonColor: customColors.appleButton,
+                buttonColor: customColors.black,
                 buttonIconImageUrl: 'assets/apple.svg',
-                buttonText: string.continueWithApple,
+                buttonText: context.strings.continueWithApple,
                 buttonBorderWidth: 1.0,
               ),
               const Gap(19),
               LoginButton(
-                buttonColor: customColors.guestButton,
+                buttonColor: customColors.primary,
                 buttonIconImageUrl: 'assets/profile.svg',
-                buttonText: string.continueAsAGuest,
+                buttonText: context.strings.continueAsAGuest,
               ),
               const Gap(244.36)
             ],
@@ -70,18 +72,18 @@ class _WelcomeText extends StatelessWidget {
   const _WelcomeText({
     super.key,
     required this.string,
-    required this.themesData,
+    required this.themeData,
   });
 
   final AppLocalizations string;
-  final ThemeData themesData;
+  final ThemeData themeData;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      string.welcomeMessage,
+      context.strings.welcomeMessage,
       textAlign: TextAlign.center,
-      style: themesData.textTheme.bodySmall,
+      style: context.themeData.textTheme.bodySmall,
     );
   }
 }

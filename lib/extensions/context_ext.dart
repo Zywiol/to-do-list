@@ -3,5 +3,5 @@ import 'package:flutter/material.dart';
 
 extension ContextExt on BuildContext {
   AppLocalizations get strings => AppLocalizations.of(this);
-  ThemeData get themesData => Theme.of(this);
+  ThemeData get themeData => Theme.of(this);
 }

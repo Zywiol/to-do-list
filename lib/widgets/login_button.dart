@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_list/extensions/theme_text_ext.dart';
+import 'package:to_do_list/extensions/context_ext.dart';
+
 import 'package:to_do_list/screens/home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../extensions/theme_colors_ext.dart';
@@ -19,8 +20,7 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(context) {
-    final customeTextStyle = Theme.of(context).extension<CustomTextStyle>()!;
-    final customColors = Theme.of(context).extension<CustomColors>();
+    final customColors = context.themeData.extension<CustomColors>()!;
 
     return SizedBox(
       width: 301,
@@ -42,7 +42,7 @@ class LoginButton extends StatelessWidget {
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
               side: BorderSide(
-                color: customColors!.buttonBorder,
+                color: customColors.white,
                 width: buttonBorderWidth,
               ),
             ),
@@ -60,7 +60,10 @@ class LoginButton extends StatelessWidget {
               padding: const EdgeInsets.only(
                 left: 9,
               ),
-              child: Text(buttonText, style: customeTextStyle.textStyle),
+              child: Text(
+                buttonText,
+                style: context.themeData.textTheme.labelMedium,
+              ),
             ),
           ],
         ),

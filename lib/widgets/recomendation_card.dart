@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:to_do_list/extensions/context_ext.dart';
 
 class RecomendationCard extends StatelessWidget {
   const RecomendationCard({super.key, required this.imageLink});
@@ -8,14 +9,13 @@ class RecomendationCard extends StatelessWidget {
   final String imageLink;
   @override
   Widget build(context) {
-    final themesData = Theme.of(context);
     return Row(
       children: [
         Container(
           width: 145,
           height: 144,
           decoration: BoxDecoration(
-            color: themesData.colorScheme.primary,
+            color: context.themeData.colorScheme.primary,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Stack(
@@ -30,7 +30,7 @@ class RecomendationCard extends StatelessWidget {
                   height: 44,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: themesData.colorScheme.secondary,
+                    color: context.themeData.colorScheme.secondary,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: SvgPicture.asset(
@@ -48,7 +48,7 @@ class RecomendationCard extends StatelessWidget {
                 ),
                 child: Text(
                   'Lorem ipsum',
-                  style: themesData.textTheme.titleMedium,
+                  style: context.themeData.textTheme.titleMedium,
                 ),
               )
             ],

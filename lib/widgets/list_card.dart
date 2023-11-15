@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:to_do_list/assets/app_images.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:to_do_list/extensions/context_ext.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard({
@@ -15,8 +15,6 @@ class ListCard extends StatelessWidget {
 
   @override
   Widget build(context) {
-    final string = AppLocalizations.of(context);
-    final themesData = Theme.of(context);
     return Column(
       children: [
         Container(
@@ -24,7 +22,7 @@ class ListCard extends StatelessWidget {
           height: 115,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: themesData.colorScheme.primary,
+            color: context.themeData.colorScheme.primary,
           ),
           child: Stack(children: [
             Padding(
@@ -33,8 +31,8 @@ class ListCard extends StatelessWidget {
                 top: 17,
               ),
               child: Text(
-                string.myShopList + '$count',
-                style: themesData.textTheme.titleLarge,
+                '${context.strings.myShopList}$count',
+                style: context.themeData.textTheme.titleLarge,
               ),
             ),
             Padding(
@@ -52,19 +50,19 @@ class ListCard extends StatelessWidget {
                           height: 31,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: themesData.colorScheme.secondary,
+                            color: context.themeData.colorScheme.secondary,
                             shape: BoxShape.circle,
                           ),
                           child: Text(
                             '$numberOfProducts',
-                            style: themesData.textTheme.titleSmall,
+                            style: context.themeData.textTheme.titleSmall,
                           ),
                         ),
                   Text(
                       (numberOfProducts == 0)
-                          ? string.noProductsItems
-                          : string.productsItems,
-                      style: themesData.textTheme.bodySmall),
+                          ? context.strings.noProductsItems
+                          : context.strings.productsItems,
+                      style: context.themeData.textTheme.bodySmall),
                 ],
               ),
             ),

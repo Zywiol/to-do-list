@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:to_do_list/extensions/context_ext.dart';
 import 'package:to_do_list/extensions/theme_colors_ext.dart';
 import 'package:to_do_list/widgets/list_card.dart';
 import 'package:to_do_list/widgets/recomendation_card.dart';
@@ -11,15 +12,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
-    final customColors = Theme.of(context).extension<CustomColors>()!;
-    final string = AppLocalizations.of(context);
-    final themesData = Theme.of(context);
+    final customColors = context.themeData.extension<CustomColors>()!;
+
     return Scaffold(
       body: Align(
         alignment: Alignment.center,
         child: Container(
           decoration: BoxDecoration(
-            color: themesData.colorScheme.background,
+            color: context.themeData.colorScheme.background,
           ),
           child: Column(
             children: [
@@ -27,8 +27,6 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 25, right: 20),
                 child: _TextAndProfile(
-                  string: string,
-                  themesData: themesData,
                   customColors: customColors,
                 ),
               ),
@@ -44,8 +42,8 @@ class HomeScreen extends StatelessWidget {
                   right: 16,
                 ),
                 child: _RecomendationTextRow(
-                  string: string,
-                  themesData: themesData,
+                  string: context.strings,
+                  themeData: context.themeData,
                 ),
               ),
               const Row(
@@ -70,8 +68,8 @@ class HomeScreen extends StatelessWidget {
                   width: 169,
                   height: 58,
                   child: _AddButton(
-                    themesData: themesData,
-                    string: string,
+                    themeData: context.themeData,
+                    string: context.strings,
                   ),
                 ),
               )
@@ -86,20 +84,19 @@ class HomeScreen extends StatelessWidget {
 class _TextAndProfile extends StatelessWidget {
   const _TextAndProfile({
     super.key,
-    required this.string,
-    required this.themesData,
     required this.customColors,
   });
 
-  final AppLocalizations string;
-  final ThemeData themesData;
   final CustomColors customColors;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        _HeaderText(string: string, themesData: themesData),
+        Text(
+          context.strings.myList,
+          style: context.themeData.textTheme.headlineLarge,
+        ),
         const Gap(192),
         _ProfileContainer(customColors: customColors),
       ],
@@ -124,22 +121,6 @@ class _ProfileContainer extends StatelessWidget {
       ),
       child: Image.asset(AppImages.profilePhoto, width: 40, height: 40),
     );
-  }
-}
-
-class _HeaderText extends StatelessWidget {
-  const _HeaderText({
-    super.key,
-    required this.string,
-    required this.themesData,
-  });
-
-  final AppLocalizations string;
-  final ThemeData themesData;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(string.myList, style: themesData.textTheme.headlineLarge);
   }
 }
 
@@ -190,24 +171,24 @@ class _RecomendationTextRow extends StatelessWidget {
   const _RecomendationTextRow({
     super.key,
     required this.string,
-    required this.themesData,
+    required this.themeData,
   });
 
   final AppLocalizations string;
-  final ThemeData themesData;
+  final ThemeData themeData;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          string.recommendation,
-          style: themesData.textTheme.titleLarge,
+          context.strings.recommendation,
+          style: context.themeData.textTheme.titleLarge,
         ),
         const Gap(98),
         Text(
-          string.viewAll,
-          style: themesData.textTheme.bodySmall,
+          context.strings.viewAll,
+          style: context.themeData.textTheme.bodySmall,
         ),
       ],
     );
@@ -240,11 +221,11 @@ class _RecomendationSizedBox extends StatelessWidget {
 class _AddButton extends StatelessWidget {
   const _AddButton({
     super.key,
-    required this.themesData,
+    required this.themeData,
     required this.string,
   });
 
-  final ThemeData themesData;
+  final ThemeData themeData;
   final AppLocalizations string;
 
   @override
@@ -253,7 +234,7 @@ class _AddButton extends StatelessWidget {
       onPressed: () {},
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(
-          themesData.colorScheme.secondary,
+          context.themeData.colorScheme.secondary,
         ),
       ),
       child: Row(
@@ -265,8 +246,8 @@ class _AddButton extends StatelessWidget {
           ),
           const Gap(21),
           Text(
-            string.addList,
-            style: themesData.textTheme.labelMedium,
+            context.strings.addList,
+            style: context.themeData.textTheme.labelMedium,
           ),
         ],
       ),
