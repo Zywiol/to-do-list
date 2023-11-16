@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:to_do_list/utils/my_colors.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:to_do_list/assets/app_images.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:to_do_list/extensions/context_ext.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard({
@@ -23,7 +22,7 @@ class ListCard extends StatelessWidget {
           height: 115,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: MyColors().white,
+            color: context.themeData.colorScheme.primary,
           ),
           child: Stack(children: [
             Padding(
@@ -32,12 +31,8 @@ class ListCard extends StatelessWidget {
                 top: 17,
               ),
               child: Text(
-                AppLocalizations.of(context).myShopList + '$count',
-                style: GoogleFonts.poppins(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                  height: 1.5,
-                ),
+                '${context.strings.myShopList}$count',
+                style: context.themeData.textTheme.titleLarge,
               ),
             ),
             Padding(
@@ -55,30 +50,19 @@ class ListCard extends StatelessWidget {
                           height: 31,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: MyColors().primary,
+                            color: context.themeData.colorScheme.secondary,
                             shape: BoxShape.circle,
                           ),
                           child: Text(
                             '$numberOfProducts',
-                            style: GoogleFonts.poppins(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5,
-                              color: MyColors().white,
-                            ),
+                            style: context.themeData.textTheme.titleSmall,
                           ),
                         ),
                   Text(
-                    (numberOfProducts == 0)
-                        ? AppLocalizations.of(context).noProductsItems
-                        : AppLocalizations.of(context).productsItems,
-                    style: GoogleFonts.poppins(
-                      color: MyColors().bodyFont,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w400,
-                      height: 1.5,
-                    ),
-                  ),
+                      (numberOfProducts == 0)
+                          ? context.strings.noProductsItems
+                          : context.strings.productsItems,
+                      style: context.themeData.textTheme.bodySmall),
                 ],
               ),
             ),
@@ -95,7 +79,7 @@ class ListCard extends StatelessWidget {
                   child: Stack(
                     children: [
                       SvgPicture.asset(
-                        'assets/Frame.svg',
+                        AppImages.productsFrame,
                       ),
                     ],
                   ),
