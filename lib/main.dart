@@ -4,8 +4,15 @@ import 'package:to_do_list/extensions/theme_colors_ext.dart';
 import 'package:to_do_list/screens/login_screen.dart';
 import 'package:to_do_list/theme/dark_theme.dart';
 import 'package:to_do_list/theme/light_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // Przesuń tę linię na początek
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(
     MaterialApp(
       title: 'To do list',

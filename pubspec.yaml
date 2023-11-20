@@ -22,6 +22,11 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_svg: ^2.0.9
+  firebase_core: ^2.22.0
+  cloud_firestore: ^4.13.1
+  firebase_storage: ^11.5.1
+  firebase_database: ^10.3.4
+  bloc: ^8.1.2
 
 dev_dependencies:
   flutter_test:

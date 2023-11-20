@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/assets/app_images.dart';
 import 'package:to_do_list/extensions/context_ext.dart';
 import 'package:to_do_list/widgets/login_button.dart';
 import 'package:gap/gap.dart';
@@ -23,7 +24,7 @@ class LoginScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: [
               const Gap(172.78),
-              SvgPicture.asset('assets/logo.svg'),
+              SvgPicture.asset(AppImages.appLogo),
               const Gap(24.88),
               Padding(
                 padding: const EdgeInsets.only(
@@ -38,20 +39,20 @@ class LoginScreen extends StatelessWidget {
               const Gap(38),
               LoginButton(
                 buttonColor: context.customColor.red,
-                buttonIconImageUrl: 'assets/google.svg',
+                buttonIconImageUrl: AppImages.googleLogo,
                 buttonText: context.strings.continueWithGoogle,
               ),
               const Gap(19),
               LoginButton(
                 buttonColor: context.customColor.black,
-                buttonIconImageUrl: 'assets/apple.svg',
+                buttonIconImageUrl: AppImages.appleLogo,
                 buttonText: context.strings.continueWithApple,
                 buttonBorderWidth: 1.0,
               ),
               const Gap(19),
               LoginButton(
                 buttonColor: context.customColor.primary,
-                buttonIconImageUrl: 'assets/profile.svg',
+                buttonIconImageUrl: AppImages.guestIcon,
                 buttonText: context.strings.continueAsGuest,
               ),
               const Gap(244.36)

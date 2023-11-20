@@ -8,10 +8,10 @@ class ListCard extends StatelessWidget {
   const ListCard({
     super.key,
     required this.numberOfProducts,
-    required this.count,
+    required this.listName,
   });
   final int numberOfProducts;
-  final int count;
+  final String listName;
 
   @override
   Widget build(context) {
@@ -31,7 +31,7 @@ class ListCard extends StatelessWidget {
                 top: 17,
               ),
               child: Text(
-                '${context.strings.myShopList}$count',
+                listName,
                 style: context.themeData.textTheme.titleLarge,
               ),
             ),

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:to_do_list/extensions/context_ext.dart';
@@ -6,6 +7,14 @@ import 'package:to_do_list/widgets/list_card.dart';
 import 'package:to_do_list/widgets/recomendation_card.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:to_do_list/assets/app_images.dart';
+
+FirebaseFirestore db = FirebaseFirestore.instance;
+
+final user = <String, dynamic>{
+  "name": "Dawid",
+  "lastName": "Zywica",
+  "age": 29
+};
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -137,27 +146,27 @@ class _ListViewSizedBox extends StatelessWidget {
         children: const [
           ListCard(
             numberOfProducts: 5,
-            count: 1,
+            listName: 'Lista 1',
           ),
           ListCard(
             numberOfProducts: 5,
-            count: 2,
+            listName: 'Lista 1',
           ),
           ListCard(
             numberOfProducts: 0,
-            count: 3,
+            listName: 'Lista 1',
           ),
           ListCard(
             numberOfProducts: 5,
-            count: 4,
+            listName: 'Lista 1',
           ),
           ListCard(
             numberOfProducts: 5,
-            count: 5,
+            listName: 'Lista 1',
           ),
           ListCard(
             numberOfProducts: 5,
-            count: 6,
+            listName: 'Lista 1',
           ),
         ],
       ),
@@ -229,7 +238,10 @@ class _AddButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FilledButton(
-      onPressed: () {},
+      onPressed: () {
+        db.collection("tests").add(user).then((DocumentReference doc) =>
+            print('DocumentSnapshot added with ID: ${doc.id}'));
+      },
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(
           context.themeData.colorScheme.secondary,
